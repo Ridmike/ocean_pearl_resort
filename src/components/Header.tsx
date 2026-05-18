@@ -4,10 +4,10 @@ import { Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
   { name: 'HOME', path: '/' },
-  { name: 'ROOMS', path: '#rooms' },
-  { name: 'FACILITIES', path: '#facilities' },
-  { name: 'GALLERY', path: '#gallery' },
-  { name: 'CONTACT', path: '#contact' },
+  { name: 'ROOMS', path: '/rooms' },
+  { name: 'FACILITIES', path: '/facilities' },
+  { name: 'GALLERY', path: '/gallery' },
+  { name: 'CONTACT', path: '/contact' },
 ]
 
 export default function Header() {
@@ -31,7 +31,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-serif font-black tracking-tighter text-black">
+        <Link to="/" className={`text-2xl font-serif font-black tracking-tighter ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
           OCEAN PEARL
         </Link>
 
@@ -40,17 +40,17 @@ export default function Header() {
           {NAV_LINKS.map((link) => {
             const isActive = location.pathname === link.path || (link.path === '/' && location.pathname === '/')
             return (
-              <a
+              <Link
                 key={link.name}
-                href={link.path}
+                to={link.path}
                 className={`text-[10px] tracking-[0.25em] font-bold transition-all duration-300 border-b-2 pb-1 ${
                   isActive 
                     ? 'text-[#a48e60] border-[#a48e60]' 
-                    : 'text-gray-900 border-transparent hover:text-[#a48e60]'
-                }`}
+                    : ' border-transparent hover:text-[#a48e60]'
+                } ${isScrolled ? 'text-gray-900' : 'text-white'}`}
               >
                 {link.name}
-              </a>
+              </Link>
             )
           })}
         </nav>
@@ -85,14 +85,14 @@ export default function Header() {
         </button>
 
         {NAV_LINKS.map((link) => (
-          <a
+          <Link
             key={link.name}
-            href={link.path}
+            to={link.path}
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-xl tracking-[0.3em] font-bold text-gray-900 hover:text-[#a48e60]"
           >
             {link.name}
-          </a>
+          </Link>
         ))}
         
         <button className="mt-4 bg-black text-white px-10 py-4 tracking-[0.3em] font-bold rounded-sm">

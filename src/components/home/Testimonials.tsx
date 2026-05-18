@@ -5,7 +5,7 @@ export default function Testimonials() {
   return (
     <section className="py-24 px-4 md:px-10 lg:px-20 bg-[#0a0a0a] text-white overflow-hidden relative">
       {/* Background Accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/[0.03] to-transparent skew-x-12 transform translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-white/3 to-transparent skew-x-12 transform translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header content */}
@@ -19,7 +19,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((testimonial) => (
             <div 
               key={testimonial.id} 
-              className="bg-white/[0.05] border border-white/10 p-10 flex flex-col hover:bg-white/[0.08] transition-all duration-500 group"
+              className="bg-white/5 border border-white/10 p-10 flex flex-col hover:bg-white/8 transition-all duration-500 group"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-8">
@@ -29,7 +29,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-lg font-light leading-relaxed italic text-gray-300 mb-10 flex-grow">
+              <p className="text-lg font-light leading-relaxed italic text-gray-300 mb-10 grow">
                 {testimonial.content}
               </p>
 
