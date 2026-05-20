@@ -43,9 +43,9 @@ export default function Informations() {
               </div>
               
               {/* Title */}
-              <h3 className="text-xl font-serif font-medium tracking-widest text-gray-900 mb-6 uppercase">
+              <p className="text-xl font-serif font-medium tracking-widest text-gray-900 mb-6 uppercase">
                 {item.title}
-              </h3>
+              </p>
               
               {/* Details */}
               <div className="space-y-1">

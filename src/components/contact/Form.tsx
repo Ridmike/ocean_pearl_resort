@@ -10,7 +10,7 @@ const Form = () => {
           viewport={{ once: true }}
           className="bg-white p-8 md:p-16 shadow-[0_10px_50px_rgba(0,0,0,0.03)] border border-gray-100"
         >
-          <h2 className="text-3xl font-serif text-gray-900 mb-12">Send a Message</h2>
+          <p className="text-3xl font-serif text-gray-900 mb-12">Send a Message</p>
           
           <form className="space-y-10">
             {/* First Name, Last Name */}
