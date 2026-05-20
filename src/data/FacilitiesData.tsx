@@ -14,7 +14,7 @@ export const FACILITIES_DATA = [
     title: "Fine Dining",
     description: "Our world-class chefs prepare exquisite international and local cuisines using fresh, organic ingredients. Enjoy an unforgettable culinary journey.",
     icon: <Utensils className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1550966841-3ee5ad60d0d8?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RmluZSUyMERpbmluZ3xlbnwwfHwwfHx8MA%3D%3D",
     features: ["Michelin Star Chef", "Organic Ingredients", "Wine Cellar", "Private Dining"]
   },
   {
@@ -22,7 +22,7 @@ export const FACILITIES_DATA = [
     title: "Luxury Spa & Wellness",
     description: "Rejuvenate your mind, body, and soul at our award-winning spa. We offer a wide range of therapeutic treatments and traditional wellness rituals.",
     icon: <Sparkles className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1544161515-4ae6ce6ea858?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1776763018829-ad685e621871?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8THV4dXJ5JTIwU3BhJTIwJTI2JTIwV2VsbG5lc3N8ZW58MHx8MHx8fDA%3D",
     features: ["Sauna & Steam", "Massage Therapy", "Ayurvedic Treatments", "Beauty Salon"]
   },
   {

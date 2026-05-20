@@ -1,10 +1,12 @@
 import Hero from '../components/facilities/Hero';
 import FacilityList from '../components/facilities/FacilityList';
+import BookingBar from '../components/common/BookingBar';
 
 export default function Facilities() {
   return (
     <div className="">
       <Hero />
+      <BookingBar />
       <div className="bg-gray-50 py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm tracking-[0.4em] font-bold text-[#a48e60] mb-4 uppercase">The Experience</p>

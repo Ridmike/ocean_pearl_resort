@@ -1,14 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar, ChevronDown } from 'lucide-react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function BookingBar() {
-  const [checkInDate, setCheckInDate] = useState<Date | null>(new Date());
-  const [checkOutDate, setCheckOutDate] = useState<Date | null>(new Date(new Date().setDate(new Date().getDate() + 1)));
+  const [checkInDate, setCheckInDate] = useState<Date | null>(() => {
+    const saved = localStorage.getItem('booking_checkIn');
+    return saved ? new Date(saved) : new Date();
+  });
+  
+  const [checkOutDate, setCheckOutDate] = useState<Date | null>(() => {
+    const saved = localStorage.getItem('booking_checkOut');
+    return saved ? new Date(saved) : new Date(new Date().setDate(new Date().getDate() + 1));
+  });
+
+  const [hotel, setHotel] = useState(() => localStorage.getItem('booking_hotel') || 'OCEAN PEARL NEGAMBO');
+  const [nationality, setNationality] = useState(() => localStorage.getItem('booking_nationality') || 'NATIONALITY');
+  const [promoCode, setPromoCode] = useState(() => localStorage.getItem('booking_promo') || '');
+
+  useEffect(() => {
+    if (checkInDate) localStorage.setItem('booking_checkIn', checkInDate.toISOString());
+    if (checkOutDate) localStorage.setItem('booking_checkOut', checkOutDate.toISOString());
+    localStorage.setItem('booking_hotel', hotel);
+    localStorage.setItem('booking_nationality', nationality);
+    localStorage.setItem('booking_promo', promoCode);
+  }, [checkInDate, checkOutDate, hotel, nationality, promoCode]);
+
+  const handleCheckInChange = (date: Date | null) => {
+    setCheckInDate(date);
+    if (date) {
+      const nextDay = new Date(date);
+      nextDay.setDate(date.getDate() + 1);
+      setCheckOutDate(nextDay);
+    }
+  };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 -mt-16 relative z-30">
+    <div className="absolute left-1/2 -translate-x-1/2 lg:bottom-30 lg:translate-y-1/2 w-full max-w-7xl px-4 z-30 -bottom-30 -translate-y-1/5">
       <div className="bg-white/90 backdrop-blur-md shadow-2xl rounded-xl p-6 lg:p-8 border border-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-15 gap-6 items-end">
           
@@ -16,7 +44,11 @@ export default function BookingBar() {
           <div className="lg:col-span-3 space-y-2">
             <label className="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Select a Hotel</label>
             <div className="relative group">
-              <select className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 px-4 text-sm font-semibold appearance-none focus:outline-none focus:ring-2 focus:ring-[#a48e60]/20 focus:border-[#a48e60] transition-all cursor-pointer">
+              <select 
+                value={hotel}
+                onChange={(e) => setHotel(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 px-4 text-sm font-semibold appearance-none focus:outline-none focus:ring-2 focus:ring-[#a48e60]/20 focus:border-[#a48e60] transition-all cursor-pointer"
+              >
                 <option>OCEAN PEARL NEGAMBO</option>
                 <option>OCEAN PEARL GALLE</option>
                 <option>OCEAN PEARL COLOMBO</option>
@@ -31,7 +63,7 @@ export default function BookingBar() {
             <div className="relative group custom-datepicker-wrapper">
               <DatePicker
                 selected={checkInDate}
-                onChange={(date: Date | null) => setCheckInDate(date)}
+                onChange={handleCheckInChange}
                 selectsStart
                 startDate={checkInDate}
                 endDate={checkOutDate}
@@ -65,10 +97,13 @@ export default function BookingBar() {
           <div className="lg:col-span-2 space-y-2">
             <label className="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Nationality</label>
             <div className="relative group">
-              <select className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 px-4 text-sm font-semibold appearance-none focus:outline-none focus:ring-2 focus:ring-[#a48e60]/20 focus:border-[#a48e60] transition-all cursor-pointer">
+              <select 
+                value={nationality}
+                onChange={(e) => setNationality(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 px-4 text-sm font-semibold appearance-none focus:outline-none focus:ring-2 focus:ring-[#a48e60]/20 focus:border-[#a48e60] transition-all cursor-pointer"
+              >
                 <option>NATIONALITY</option>
                 <option>SRI LANKAN</option>
-                <option>INDIAN</option>
                 <option>OTHER</option>
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-[#a48e60] transition-colors" />
@@ -80,6 +115,8 @@ export default function BookingBar() {
             <label className="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Promo Code</label>
             <input 
               type="text" 
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
               placeholder="CODE"
               className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 px-4 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#a48e60]/20 focus:border-[#a48e60] transition-all"
             />
