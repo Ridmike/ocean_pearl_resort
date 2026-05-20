@@ -1,4 +1,4 @@
-export type GalleryCategory = 'ALL' | 'ROOMS' | 'DINING' | 'SPA' | 'EXTERIOR';
+export type GalleryCategory = 'ALL' | 'ROOMS' | 'DINING' | 'SPA' | 'EXTERIOR' | 'OTHER';
 
 export const GALLERY_DATA = [
   {
@@ -16,13 +16,13 @@ export const GALLERY_DATA = [
   {
     id: 3,
     category: 'DINING' as GalleryCategory,
-    image: 'https://images.unsplash.com/photo-1550966841-3ee5ad60d0d8?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D',
     title: 'Signature Restaurant'
   },
   {
     id: 4,
     category: 'SPA' as GalleryCategory,
-    image: 'https://images.unsplash.com/photo-1544161515-4ae6ce6ea858?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1776763018829-ad685e621871?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWxzJTIwc3BhfGVufDB8fDB8fHww',
     title: 'Zen Spa'
   },
   {
@@ -34,7 +34,7 @@ export const GALLERY_DATA = [
   {
     id: 6,
     category: 'ROOMS' as GalleryCategory,
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://media.istockphoto.com/id/2187865855/photo/modern-style-comfortable-white-living-room-with-open-the-door-to-see-the-sea-view-3d-render.webp?a=1&b=1&s=612x612&w=0&k=20&c=vwLu3i6K-_-IQ1j7p7mvMMPYl3Y87FNskzjTLGhOHXg=',
     title: 'Ocean View Room'
   },
   {
@@ -54,5 +54,11 @@ export const GALLERY_DATA = [
     category: 'EXTERIOR' as GalleryCategory,
     image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop',
     title: 'Beach Access'
+  },
+  {
+    id: 10,
+    category: 'OTHER' as GalleryCategory,
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop',
+    title: 'Event Space'
   }
 ];

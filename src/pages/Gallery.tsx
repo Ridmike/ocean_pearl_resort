@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { GALLERY_DATA, type GalleryCategory } from '../data/GalleryData';
 import Hero from '../components/gallery/Hero';
 
-const CATEGORIES: GalleryCategory[] = ['ALL', 'ROOMS', 'DINING', 'SPA', 'EXTERIOR'];
+const CATEGORIES: GalleryCategory[] = ['ALL', 'ROOMS', 'DINING', 'SPA', 'EXTERIOR', 'OTHER'];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('ALL');
@@ -32,7 +32,7 @@ export default function Gallery() {
               >
                 {cat}
                 {activeCategory === cat && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#a48e60]" />
+                  <span className="absolute bottom-0 left-0 w-full bg-[#a48e60]" />
                 )}
               </button>
             ))}

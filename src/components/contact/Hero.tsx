@@ -1,5 +1,3 @@
-import Buttons from '../buttons/Buttons'
-
 export default function Hero() {
   return (
     <div>
