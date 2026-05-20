@@ -23,6 +23,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   return (
     <header 
       className={`fixed top-0  lg:backdrop-blur-sm left-0 w-full z-50 transition-all duration-300 px-4 md:px-10 lg:px-20 py-4 ${
@@ -31,8 +42,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className={`text-2xl font-serif font-black tracking-tighter ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-          OCEAN PEARL
+        <Link 
+          to="/" 
+          onClick={handleLogoClick}
+          className={`text-2xl font-serif font-black tracking-tighter ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+        >
+          OCEAN <span className="text-[#a48e60]">PEARL</span>
         </Link>
 
         {/* Desktop Navigation */}

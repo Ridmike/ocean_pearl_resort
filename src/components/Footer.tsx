@@ -8,9 +8,9 @@ export default function Footer() {
           
           {/* Logo and About */}
           <div className="space-y-6">
-            <p className="text-3xl font-serif font-black tracking-tight text-black">OCEAN PEARL</p>
+            <p className="text-3xl font-serif font-black tracking-tight text-black">OCEAN <span className="text-[#a48e60]">PEARL</span></p>
             <p className="text-gray-600 leading-relaxed max-w-62">
-              Defining the standard of global luxury hospitality since 1904.
+              Defining the standard of global luxury hospitality since 2000.
             </p>
             <div className="flex gap-4">
               <button className="p-3 border border-gray-400 rounded-lg hover:bg-white hover:border-black transition-all duration-300">

@@ -1,6 +1,8 @@
 import room from '../../assets/view.jpg'
+import { Link } from 'react-router-dom'
 
 export default function Gallery() {
+
   return (
     <section className="py-24 px-4 md:px-10 lg:px-20 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -11,12 +13,12 @@ export default function Gallery() {
             <h2 className="text-5xl font-serif text-gray-900">Life at the Resort</h2>
           </div>
           <div>
-            <a 
-              href="#gallery" 
+            <Link 
+              to="/gallery" 
               className="text-xs uppercase tracking-[0.2em] font-bold text-gray-900 border-b-2 border-gray-900 pb-1 hover:text-[#a48e60] hover:border-[#a48e60] transition-colors duration-300"
             >
               View Full Gallery
-            </a>
+            </Link>
           </div>
         </div>
 

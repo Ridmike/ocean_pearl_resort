@@ -1,4 +1,5 @@
 import { Star, Bed, Wind, Wine, Wifi, Mountain, Bath, Utensils } from 'lucide-react'
+import Buttons from '../buttons/Buttons';
 
 interface RoomCardProps {
   image: string;
@@ -79,12 +80,7 @@ export default function RoomCard({ image, title, price, description, rating, ame
         </div>
         
         {/* Reserve Button */}
-        <button 
-          onClick={onReserve}
-          className="w-full py-4 border border-[#a48e60] text-[#a48e60] text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#a48e60] hover:text-white transition-all duration-300 transform active:scale-[0.98]"
-        >
-          Reserve Now
-        </button>
+        <Buttons text="Reserve Now" variant="cardbtn" onClick={onReserve} />
       </div>
     </div>
   )

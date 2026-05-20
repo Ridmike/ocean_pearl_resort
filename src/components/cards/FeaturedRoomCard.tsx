@@ -1,3 +1,5 @@
+import Buttons from "../buttons/Buttons";
+
 interface FeaturedRoomCardProps {
   image: string;
   title: string;
@@ -30,12 +32,7 @@ export default function FeaturedRoomCard({ image, title, description, price, onV
         </p>
         
         {/* Outline Button */}
-        <button 
-          onClick={onViewDetails}
-          className="w-full py-3 border border-[#a48e60] text-[#a48e60] text-xs uppercase tracking-widest font-semibold hover:bg-[#a48e60] hover:text-white transition-colors duration-300"
-        >
-          View Details
-        </button>
+        <Buttons text="View Details" variant="cardbtn" />
       </div>
     </div>
   )

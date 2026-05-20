@@ -13,13 +13,13 @@ export default function Hero() {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
         <div className="max-w-4xl">
-          <span className="text-[#a48e60] tracking-[0.5em] font-bold text-xs mb-4 block">EXCELLENCE AT YOUR SERVICE</span>
+          <span className="text-[#a48e60] tracking-[0.5em] font-bold text-xs mb-4 block">Capturing Moments</span>
           <p className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight">
-            World Class <span className="italic text-[#a48e60]">Facilities</span>
+            Our <span className="italic text-[#a48e60]">Gallery</span>
           </p>
-          <p className="text-gray-200 max-w-2xl mx-auto text-center italic text-lg leading-relaxed">
-            From our serene infinity pool to our award-winning spa, we offer a sanctuary 
-            where every detail is designed for your ultimate relaxation.
+          <p className="text-gray-200 max-w-2xl mx-auto text-center italic text-lg font-light leading-relaxed">
+            Take a visual tour through the luxurious spaces, exquisite dining experiences, 
+            and serene surroundings of Ocean Pearl.
           </p>
         </div>
       </div>
