@@ -8,7 +8,7 @@ interface FeaturedRoomCardProps {
   onViewDetails?: () => void;
 }
 
-export default function FeaturedRoomCard({ image, title, description, price, onViewDetails }: FeaturedRoomCardProps) {
+export default function FeaturedRoomCard({ image, title, description, price }: FeaturedRoomCardProps) {
   return (
     <div className="bg-white group shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
       {/* Image Container */}
